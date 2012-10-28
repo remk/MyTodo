@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>
+    Todo
+</h1>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+        </tr>
+        </thead>
+        <tbody id="bodyTableTasks">
+        <tr>
+            <td>
+                <input class="input-block-level" id="inputNewTask"
+                       placeholder="Enter a new task, and press 'enter' to save it">
+            </td>
+        </tr>
+        #{list items:tasks, as:'task' }
+        <tr>
+            <td id="td_${task.id}">
+                <input class="input-block-level task" id="input_task_${task.id}"
+                       placeholder="press enter when empty to delete" value="${task.task_txt}">
+
+            </td>
+        </tr>
+        #{/list}
+        </tbody>
+    </table>
+
+</div>
